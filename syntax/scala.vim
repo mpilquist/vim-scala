@@ -45,7 +45,9 @@ syn keyword scalaKeywordModifier private
 syn keyword scalaKeywordModifier protected
 syn keyword scalaKeywordModifier sealed
 syn match scalaKeyword "=>"
+syn match scalaKeyword "⇒"
 syn match scalaKeyword "<-"
+syn match scalaKeyword "←"
 syn match scalaKeyword "\<_\>"
 
 syn match scalaOperator ":\{2,\}" "this is not a type
@@ -95,7 +97,8 @@ syn region scalaComment start="/\*" end="\*/" contains=scalaTodo
 syn case ignore
 syn include @scalaHtml syntax/html.vim
 syn case match
-syn region scalaDocComment start="/\*\*" end="\*/" contains=scalaDocTags,scalaTodo,@scalaHtml keepend
+syn region scalaDocComment start="/\*\*" end="\*/" contains=scalaDocTags,scalaTodo,@scalaHtml,scalaDocMarkup keepend
+syn match scalaDocMarkup ".*" contained
 syn region scalaDocTags start="{@\(link\|linkplain\|inherit[Dd]oc\|doc[rR]oot\|value\)" end="}" contained
 syn match scalaDocTags "@[a-z]\+" contained
 
