@@ -3,7 +3,7 @@ setlocal textwidth=140
 setlocal shiftwidth=2
 setlocal softtabstop=2
 setlocal expandtab
-setlocal formatoptions=tcqr
+setlocal formatoptions=tcqro
 
 if globpath(&rtp, 'plugin/fuf.vim') != ''
     "
