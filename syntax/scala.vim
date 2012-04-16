@@ -162,6 +162,7 @@ hi def link scalaUnicode Special
 hi def link scalaComment Comment
 hi def link scalaLineComment Comment
 hi def link scalaDocComment Comment
+hi def link scalaDocMarkup Comment
 hi def link scalaTodo Todo
 hi def link scalaType Type
 hi def link scalaTypeSpecializer scalaType
