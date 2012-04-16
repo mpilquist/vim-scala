@@ -66,12 +66,15 @@ syn keyword scalaVar var nextgroup=scalaVarName skipwhite
 syn keyword scalaClass class nextgroup=scalaClassName skipwhite
 syn keyword scalaObject object nextgroup=scalaClassName skipwhite
 syn keyword scalaTrait trait nextgroup=scalaClassName skipwhite
+syn keyword scalaTypeAlias type nextgroup=scalaTypeAliasName skipwhite
 syn match scalaDefName "[^ =:;([]\+" contained nextgroup=scalaDefSpecializer skipwhite
 syn match scalaValName "[^ =:;([]\+" contained
-syn match scalaVarName "[^ =:;([]\+" contained 
+syn match scalaVarName "[^ =:;([]\+" contained
 syn match scalaClassName "[^ =:;(\[]\+" contained nextgroup=scalaClassSpecializer skipwhite
+syn match scalaTypeAliasName "[^ =:;([]\+" contained nextgroup=scalaTypeAliasSpecializer skipwhite
 syn region scalaDefSpecializer start="\[" end="\]" contained contains=scalaDefSpecializer
 syn region scalaClassSpecializer start="\[" end="\]" contained contains=scalaClassSpecializer
+syn region scalaTypeAliasSpecializer start="\[" end="\]" contained contains=scalaTypeAliasSpecializer
 syn match scalaBackTick "`[^`]\+`"
 
 " type constructor (actually anything with an uppercase letter)
@@ -135,50 +138,55 @@ syn match scalaREPLCmdLine "\<scala>\>"
 syn sync fromstart
 
 " map Scala groups to standard groups
-hi link scalaKeyword Keyword
-hi link scalaKeywordModifier Function
-hi link scalaAnnotation Include
-hi link scalaPackage Include
-hi link scalaImport Include
-hi link scalaREPLCmdLine Include
-hi link scalaDocTags Include
-hi link scalaBackTick Include
-hi link scalaBoolean Boolean
-hi link scalaOperator Normal
-hi link scalaNumber Number
-hi link scalaEmptyString String
-hi link scalaString String
-hi link scalaChar String
-hi link scalaMultiLineString String
-hi link scalaStringEscape Special
-hi link scalaSymbol Special
-hi link scalaUnicode Special
-hi link scalaComment Comment
-hi link scalaLineComment Comment
-hi link scalaDocComment Comment
-hi link scalaTodo Todo
-hi link scalaType Type
-hi link scalaTypeSpecializer scalaType
-hi link scalaXml String
-hi link scalaXmlTag Include
-hi link scalaXmlString String
-hi link scalaXmlStart Include
-hi link scalaXmlEscape Normal
-hi link scalaXmlEscapeSpecial Special
-hi link scalaXmlQuote Special
-hi link scalaXmlComment Comment
-hi link scalaDef Keyword
-hi link scalaVar Keyword
-hi link scalaVal Keyword
-hi link scalaClass Keyword
-hi link scalaObject Keyword
-hi link scalaTrait Keyword
-hi link scalaDefName Function
-hi link scalaDefSpecializer Function
-hi link scalaClassName Special
-hi link scalaClassSpecializer Special
-hi link scalaConstructor Special
-hi link scalaConstructorSpecializer scalaConstructor
+hi def link scalaKeyword Keyword
+hi def link scalaKeywordModifier Keyword
+hi def link scalaAnnotation Include
+hi def link scalaPackage Include
+hi def link scalaImport Include
+hi def link scalaREPLCmdLine Include
+hi def link scalaDocTags Comment
+hi def link scalaBackTick Include
+hi def link scalaBoolean Boolean
+hi def link scalaOperator Normal
+hi def link scalaNumber Number
+hi def link scalaEmptyString String
+hi def link scalaString String
+hi def link scalaChar String
+hi def link scalaMultiLineString String
+hi def link scalaStringEscape Special
+hi def link scalaSymbol Constant
+hi def link scalaUnicode Special
+hi def link scalaComment Comment
+hi def link scalaLineComment Comment
+hi def link scalaDocComment Comment
+hi def link scalaTodo Todo
+hi def link scalaType Type
+hi def link scalaTypeSpecializer scalaType
+hi def link scalaXml String
+hi def link scalaXmlTag Include
+hi def link scalaXmlString String
+hi def link scalaXmlStart Include
+hi def link scalaXmlEscape Normal
+hi def link scalaXmlEscapeSpecial Special
+hi def link scalaXmlQuote Special
+hi def link scalaXmlComment Comment
+hi def link scalaDef Keyword
+hi def link scalaVar Keyword
+hi def link scalaVarName Underlined
+hi def link scalaVal Keyword
+hi def link scalaValName Constant
+hi def link scalaClass Keyword
+hi def link scalaObject Keyword
+hi def link scalaTrait Keyword
+hi def link scalaTypeAlias Keyword
+hi def link scalaDefName Function
+hi def link scalaDefSpecializer Function
+hi def link scalaClassName Type
+hi def link scalaClassSpecializer Type
+hi def link scalaTypeAliasName Type
+hi def link scalaTypeAliasSpecializer Type
+hi def link scalaConstructor Type
+hi def link scalaConstructorSpecializer scalaConstructor
 
 let b:current_syntax = "scala"
 
