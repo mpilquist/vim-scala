@@ -143,7 +143,7 @@ syn sync fromstart
 " map Scala groups to standard groups
 hi def link scalaKeyword Keyword
 hi def link scalaKeywordModifier Keyword
-hi def link scalaAnnotation Include
+hi def link scalaAnnotation Comment
 hi def link scalaPackage Include
 hi def link scalaImport Include
 hi def link scalaREPLCmdLine Include
